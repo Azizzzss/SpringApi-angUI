@@ -28,7 +28,6 @@ public class JwtService {
         return generateTokenR(new HashMap<>(),userDetails);
     }
 
-
     public String generateToken(Map<String , Object> extraClaims , UserDetails userDetails){
 
 
@@ -56,8 +55,6 @@ public class JwtService {
 
     }
 
-
-
     private Claims extractAllClaims(String token){
         return Jwts
                 .parserBuilder()
@@ -79,9 +76,6 @@ public class JwtService {
     private Date extractExpiration(String token){
         return extractClaim(token , Claims::getExpiration);
     }
-
-
-
 
 
     public boolean isTokenValid(String token , UserDetails userDetails){
